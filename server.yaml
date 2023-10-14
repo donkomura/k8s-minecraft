@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mc-backend
+  labels:
+    app: mc-backend
+spec:
+  serviceName: mc-backend
+  replicas: 1
+  minReadySeconds: 10
+  selector:
+    matchLabels:
+      app: mc-backend
+  template:
+    metadata:
+      labels:
+        app: mc-backend
+    spec:
+      containers:
+      - name: mc-backend
+        image: itzg/minecraft-server:latest
+        envFrom:
+        - configMapRef:
+            name: server-property
+        ports:
+        - containerPort: 25565
+          name: minecraft
+          protocol: TCP
+        resources:
+          requests:
+            cpu: "3"
+            memory: 6000Mi
+        volumeMounts:
+        - name: mc-data
+          mountPath: /data
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+  volumeClaimTemplates:
+  - metadata:
+      name: mc-data
+    spec:
+      storageClassName: premium-rwo
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 50Gi
