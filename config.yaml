@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: server-property
+data:
+  EULA: "true"
+  DIFFICULTY: normal
+  TYPE: SPIGOT
+  VERSION: 1.20.2
+  WHITELIST: ""
+  OPS: ""
+  ICON: ""
+  MAX_PLAYERS: "50"
+  MAX_WORLD_SIZE: "5000"
+  ALLOW_NETHER: "true"
+  ANNOUNCE_PLAYER_ACHIEVEMENTS: "true"
+  ENABLE_COMMAND_BLOCK: "true"
+  FORCE_gameMode: "false"
+  GENERATE_STRUCTURES: "true"
+  HARDCORE: "false"
+  MAX_BUILD_HEIGHT: "256"
+  MAX_TICK_TIME: "60000"
+  SPAWN_ANIMALS: "true"
+  SPAWN_MONSTERS: "true"
+  SPAWN_NPCS: "true"
+  VIEW_DISTANCE: "10"
+  SEED: ""
+  MODE: survival
+  MOTD: kubernetes cluster
+  PVP: "false"
+  LEVEL_TYPE: DEFAULT
+  GENERATOR_SETTINGS: ""
+  LEVEL: reality
+  ONLINE_MODE: "true"
+  JVM_OPTS: -Xmx5120M -Xms5120M
