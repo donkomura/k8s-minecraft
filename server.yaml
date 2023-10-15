@@ -33,16 +33,14 @@ spec:
         volumeMounts:
         - name: mc-data
           mountPath: /data
+      volumes:
+        - name: mc-data
+          persistentVolumeClaim:
+            claimName: mc-data-pvc
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
-  volumeClaimTemplates:
-  - metadata:
-      name: mc-data
-    spec:
-      storageClassName: premium-rwo
-      accessModes:
-        - ReadWriteOnce
-      resources:
-        requests:
-          storage: 50Gi
+  updateStrategy:
+    rollingUpdate:
+      maxUnavailable: 1
+    type: RollingUpdate

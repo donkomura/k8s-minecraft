@@ -4,11 +4,12 @@ metadata:
   name: server-property
 data:
   EULA: "true"
+  OVERRIDE_SERVER_PROPERTIES: "false"
   DIFFICULTY: normal
   TYPE: SPIGOT
   VERSION: 1.20.2
-  WHITELIST: ""
-  OPS: ""
+  WHITELIST: "d0nkooo"
+  OPS: "d0nkooo"
   ICON: ""
   MAX_PLAYERS: "50"
   MAX_WORLD_SIZE: "5000"
@@ -30,6 +31,6 @@ data:
   PVP: "false"
   LEVEL_TYPE: DEFAULT
   GENERATOR_SETTINGS: ""
-  LEVEL: reality
+  LEVEL: ddd
   ONLINE_MODE: "true"
   JVM_OPTS: -Xmx5120M -Xms5120M
